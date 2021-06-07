@@ -1,0 +1,16 @@
+﻿@using BlazorCalc.Shared
+<div class="col-7 round-switch">
+    <input type="checkbox" @bind="@DisplayExpSetting.Round"/>
+    <label for="rounding">Zaokrouhlit na celá čísla</label>
+</div>
+<div class="col-5 round-switch">
+    <input type="checkbox" @bind="@DisplayExpSetting.FailsToHistory"/>
+    <label for="overfail">Ukládat chyby</label>
+</div>
+
+@code {
+
+    [Parameter]
+    public Expression DisplayExpSetting { get; set; }
+
+}

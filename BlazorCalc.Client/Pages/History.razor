@@ -1,0 +1,29 @@
+﻿<h5>Historie</h5>
+<hr class="line-history"/>
+<div class="history-grid">
+
+
+    @if (HistoryList == null)
+    {
+        <span>Načítám...</span>
+    }
+    else
+    {
+        @foreach (var message in HistoryList)
+        {
+            <span>
+                @message
+            </span>
+        }
+    }
+
+
+
+</div>
+
+@code {
+
+    [Parameter]
+    public string[] HistoryList { get; set; }
+
+}

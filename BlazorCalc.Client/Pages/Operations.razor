@@ -1,0 +1,17 @@
+﻿<div class="calculator-operations-buttons col-2">
+    <button @onclick="@(() => OnClick.InvokeAsync("Clear"))" class="calc-op-button">C</button>
+    <button @onclick="@(() => OnClick.InvokeAsync("+"))" disabled="@Disabled" class="calc-op-button">&plus;</button>
+    <button @onclick="@(() => OnClick.InvokeAsync("-"))" disabled="@Disabled" class="calc-op-button">-</button>
+    <button @onclick="@(() => OnClick.InvokeAsync("*"))" disabled="@Disabled" class="calc-op-button">×</button>
+    <button @onclick="@(() => OnClick.InvokeAsync("/"))" disabled="@Disabled" class="calc-op-button">÷</button>
+</div>
+
+@code {
+
+    [Parameter]
+    public EventCallback<string> OnClick { get; set; }
+
+    [Parameter]
+    public bool Disabled { get; set; }
+
+}
